@@ -26,5 +26,9 @@ namespace miLibreria
             
         
         }
+        public Boolean SoloNumeros
+        {   set;
+            get;
+        }
     }
 }

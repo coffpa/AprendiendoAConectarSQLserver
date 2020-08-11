@@ -34,11 +34,25 @@ namespace miLibreria
                             hayErrores = true;
                         }
                     }
-                    else
-                        Error.SetError(obj, ""); 
-                    
-                    
-                }        
+                    if (obj.SoloNumeros == true)
+                    {
+                        int contador=0, letrasEncontradas=0;
+                        foreach (char letra in obj.Text.Trim())
+                        { if (char.IsLetter(obj.Text.Trim(), contador))
+                            { letrasEncontradas++; 
+                            }
+                        
+                        contador++; 
+                       }
+                        if (letrasEncontradas != 0)
+                        { hayErrores = true;
+                            Error.SetError(obj, "Solo numeros");
+                        }
+                        
+                    }
+                   
+                }
+            
                         
             }
             return hayErrores;

@@ -19,18 +19,22 @@ namespace AprendiendoAConectarSQLserver
         }
         public override bool Guardar()
         {
-            try
+            if (Utilidades.ValidarFormulario(this, errorProvider1) == false)
             {
-                string cmd = string.Format("EXEC ActualizaArticulo '{0}','{1}','{2}'",txtIdProducto.Text.Trim(),txtDescripcionProd.Text.Trim(),txtPrecio.Text.Trim());
-                Utilidades.Ejecutar(cmd);
-                MessageBox.Show("Se ha guardado correctamente");
-                return true;
+                try
+                {
+                    string cmd = string.Format("EXEC ActualizaArticulo '{0}','{1}','{2}'", txtIdProducto.Text.Trim(), txtDescripcionProd.Text.Trim(), txtPrecio.Text.Trim());
+                    Utilidades.Ejecutar(cmd);
+                    MessageBox.Show("Se ha guardado correctamente");
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Ha ocurrido un error " + e.Message);
+                    return false;
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("Ha ocurrido un error " + e.Message);
-                return false;
-            }
+            else { return false; }
         }
         public override void Eliminar()
         {
@@ -45,6 +49,11 @@ namespace AprendiendoAConectarSQLserver
             {
                 MessageBox.Show("Ha ocurrido un error: ", e.Message);
             }
+        }
+
+        private void txtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
         }
     }
 

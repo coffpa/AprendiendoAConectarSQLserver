@@ -111,6 +111,9 @@
     <Compile Include="VentanaUser.Designer.cs">
       <DependentUpon>VentanaUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioBase.resx">
       <DependentUpon>FormularioBase.cs</DependentUpon>
     </EmbeddedResource>
