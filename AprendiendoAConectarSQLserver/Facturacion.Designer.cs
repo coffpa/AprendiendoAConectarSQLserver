@@ -40,7 +40,7 @@
             this.lbDescripcion = new System.Windows.Forms.Label();
             this.lbPrecio = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbtotal = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
             this.lb3 = new System.Windows.Forms.Label();
             this.lbImporte = new System.Windows.Forms.Label();
@@ -163,21 +163,24 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(874, 683);
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(820, 665);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.Size = new System.Drawing.Size(134, 37);
             this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
             // 
-            // label5
+            // lbtotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(771, 683);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
+            this.lbtotal.AutoSize = true;
+            this.lbtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtotal.Location = new System.Drawing.Point(718, 668);
+            this.lbtotal.Name = "lbtotal";
+            this.lbtotal.Size = new System.Drawing.Size(86, 34);
+            this.lbtotal.TabIndex = 12;
+            this.lbtotal.Text = "Total";
             // 
             // lb1
             // 
@@ -285,6 +288,7 @@
             this.txtCantidad.SoloNumeros = false;
             this.txtCantidad.TabIndex = 20;
             this.txtCantidad.Validar = true;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtPrecio
             // 
@@ -294,6 +298,7 @@
             this.txtPrecio.SoloNumeros = false;
             this.txtPrecio.TabIndex = 22;
             this.txtPrecio.Validar = true;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtCodColum
             // 
@@ -303,6 +308,7 @@
             this.txtCodColum.SoloNumeros = false;
             this.txtCodColum.TabIndex = 23;
             this.txtCodColum.Validar = true;
+            this.txtCodColum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeros_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -408,7 +414,7 @@
             this.Controls.Add(this.lbImporte);
             this.Controls.Add(this.lb3);
             this.Controls.Add(this.lb1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbtotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbPrecio);
             this.Controls.Add(this.lbDescripcion);
@@ -435,7 +441,7 @@
             this.Controls.SetChildIndex(this.lbDescripcion, 0);
             this.Controls.SetChildIndex(this.lbPrecio, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.lbtotal, 0);
             this.Controls.SetChildIndex(this.lb1, 0);
             this.Controls.SetChildIndex(this.lb3, 0);
             this.Controls.SetChildIndex(this.lbImporte, 0);
@@ -469,7 +475,7 @@
         private System.Windows.Forms.Label lbDescripcion;
         private System.Windows.Forms.Label lbPrecio;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbtotal;
         private System.Windows.Forms.Label lb1;
         private System.Windows.Forms.Label lb3;
         private System.Windows.Forms.Label lbImporte;

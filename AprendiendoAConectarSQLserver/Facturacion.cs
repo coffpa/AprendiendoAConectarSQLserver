@@ -20,7 +20,7 @@ namespace AprendiendoAConectarSQLserver
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            string cmd = "Select * From Usuario Where id_usuario=" + VentanaLogin.codigo.Trim() ;
+            string cmd = "Select * From Usuario Where id_usuario=" + VentanaLogin.codigo.Trim();
             DataSet ds = Utilidades.Ejecutar(cmd);
             lbLeAtiende.Text = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
         }
@@ -28,7 +28,8 @@ namespace AprendiendoAConectarSQLserver
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtID.Text.Trim()) == false)
-            {   try
+            {
+                try
                 {
                     string cmd = string.Format("Select nom_cli From Cliente Where id_Cliente='{0}'", txtID.Text.Trim());
                     DataSet ds = new DataSet();
@@ -38,36 +39,37 @@ namespace AprendiendoAConectarSQLserver
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show("Ha ocurrido un error" + error.Message); 
+                    MessageBox.Show("Ha ocurrido un error" + error.Message);
                 }
             }
         }
-        public static int contadorFila=0; 
+        public static int contadorFila = 0;
 
         private void btnColocar_Click(object sender, EventArgs e)
         {
             if (Utilidades.ValidarFormulario(this, errorProvider1) == false)
-            { bool existe = false;
-                int num_fila=0;
+            {
+                bool existe = false;
+                int num_fila = 0;
                 if (contadorFila == 0)
-                {   
+                {
                     dataGridView1.Rows.Add(txtCodColum.Text, txtDescripcion.Text, txtPrecio.Text, txtCantidad.Text);
-                    double importe = Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[2].Value)* Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[3].Value); 
+                    double importe = Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[2].Value) * Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[3].Value);
                     dataGridView1.Rows[contadorFila].Cells[4].Value = importe;
-                    contadorFila++; 
+                    contadorFila++;
                 }
-                else 
+                else
                 {
 
                     foreach (DataGridViewRow fila in dataGridView1.Rows)
                     {
-                         if (Convert.ToString(fila.Cells[0].Value) == txtCodColum.Text)
-                         {
-                                existe = true;
-                                num_fila = fila.Index;
-                                
-                         }
-                        
+                        if (Convert.ToString(fila.Cells[0].Value) == txtCodColum.Text)
+                        {
+                            existe = true;
+                            num_fila = fila.Index;
+
+                        }
+
                     }
                     if (existe == true)
                     {
@@ -75,18 +77,27 @@ namespace AprendiendoAConectarSQLserver
                         double importe = Convert.ToDouble(dataGridView1.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dataGridView1.Rows[num_fila].Cells[3].Value);
                         dataGridView1.Rows[num_fila].Cells[4].Value = importe;
                     }
-                    else 
+                    else
                     {
                         dataGridView1.Rows.Add(txtCodColum.Text, txtDescripcion.Text, txtPrecio.Text, txtCantidad.Text);
                         double importe = Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[2].Value) * Convert.ToDouble(dataGridView1.Rows[contadorFila].Cells[3].Value);
                         dataGridView1.Rows[contadorFila].Cells[4].Value = importe;
-                        contadorFila++; 
+                        contadorFila++;
                     }
                 }
 
 
 
 
+
+            }
+        }
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
 
             }
         }
