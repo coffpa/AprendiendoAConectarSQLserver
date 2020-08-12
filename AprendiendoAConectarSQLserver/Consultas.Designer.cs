@@ -73,7 +73,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(59, 50);
+            this.lbNombre.Location = new System.Drawing.Point(121, 50);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(58, 17);
             this.lbNombre.TabIndex = 4;
@@ -81,18 +81,22 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 50);
+            this.textBox1.Location = new System.Drawing.Point(197, 47);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 22);
+            this.textBox1.Size = new System.Drawing.Size(324, 22);
             this.textBox1.TabIndex = 5;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 80);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(969, 443);
             this.dataGridView1.TabIndex = 6;
             // 
@@ -123,12 +127,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Button btnBuscar;
+        public System.Windows.Forms.Button btnSeleccionar;
+        public System.Windows.Forms.Button btnImprimir;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

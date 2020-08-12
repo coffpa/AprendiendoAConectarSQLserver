@@ -123,5 +123,26 @@ namespace AprendiendoAConectarSQLserver
             MP.MdiParent = this;
             MP.Show();
         }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultarclientes concli = new Consultarclientes();
+            concli.MdiParent = this;
+            concli.Show();
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarProductos conpro = new ConsultarProductos();
+            conpro.MdiParent = this;
+            conpro.Show();
+        }
+
+        private void facturacionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Facturacion fact = new Facturacion();
+            fact.MdiParent = this;
+            fact.Show();
+        }
     }
 }

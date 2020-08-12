@@ -49,11 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultarclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultarclientes.Designer.cs">
+      <DependentUpon>Consultarclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarProductos.Designer.cs">
+      <DependentUpon>ConsultarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consultas.Designer.cs">
       <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioBase.cs">
       <SubType>Form</SubType>
@@ -111,8 +129,17 @@
     <Compile Include="VentanaUser.Designer.cs">
       <DependentUpon>VentanaUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultarclientes.resx">
+      <DependentUpon>Consultarclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarProductos.resx">
+      <DependentUpon>ConsultarProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas.resx">
       <DependentUpon>Consultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBase.resx">
       <DependentUpon>FormularioBase.cs</DependentUpon>
